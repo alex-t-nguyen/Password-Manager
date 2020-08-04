@@ -26,12 +26,6 @@ def home():
     return render_template('home.html', posts=None)
 
 
-# Password page
-@app.route("/passwords")
-def passwords():
-    return render_template('passwords.html', title='Passwords')
-
-
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
