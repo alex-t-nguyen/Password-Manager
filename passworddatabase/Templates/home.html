@@ -1,0 +1,31 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    {% if posts is not none %}
+        {% for service in posts.items %}
+            {% if service.owner == current_user %}
+                <article class="media content-section">
+                  <div class="media-body">
+                    <div class="article-metadata">
+                      <!--<a class="mr-2" href="#">{{ service.owner_id }}</a>-->
+                      <small class="text-muted">{{ service.date_created.strftime('%Y-%m-%d') }}</small>
+                    </div>
+                    <h2><a class="article-title" href="{{ url_for('password_item', password_id=service.id) }}">{{ service.title }}</a></h2>
+                    <p class="article-content">{{ service.content }}</p>
+                  </div>
+                </article>
+            {% endif %}
+        {% endfor %}
+        {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+                {% if posts.page == page_num %}
+                    <a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num)  }}">{{ page_num }}</a>
+                {% else %}
+                    <a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num)  }}">{{ page_num }}</a>
+                {% endif %}
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endblock content %}
