@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
-addedapp = Flask(__name__, template_folder='Templates')
+app = Flask(__name__, template_folder='Templates')
 
 app.config['SECRET_KEY'] = '10bf65da7e684075001d3f07f2b9ca43'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///password_manager.db'
