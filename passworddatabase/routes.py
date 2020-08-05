@@ -25,7 +25,7 @@ def home():
             page = request.args.get('page', 1, type=int)
             service_pass = Service.query.order_by(Service.date_created.desc()).paginate(page=page, per_page=5)
             return render_template('home.html', posts=service_pass, num_passwords=num_passwords, num_password_duplicates=num_password_duplicates, user=current_user.username)
-    return render_template('home.html', posts=None, num_passwords=num_passwords, num_password_duplicates=num_password_duplicates, user=None)
+    return render_template('home.html', posts=None, num_passwords=num_passwords, num_password_duplicates=num_password_duplicates, user="No services associated yet")
 
 
 @app.route("/register", methods=['GET', 'POST'])
