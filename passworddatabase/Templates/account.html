@@ -52,9 +52,13 @@
                         {% endif %}
                     </div>
                 </fieldset>
-                <div class="form-group">
-                    {{ form.submit(class="btn btn-outline-info") }}
-                    <button type="button" class="btn btn-danger float-right btn-md mt-1 mb-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <div class="form-group row align-items-center">
+                    <span class="col-6">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </span>
+                    <span class="col-6">
+                        <button type="button" class="btn btn-danger float-right btn-md mt-1 mb-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    </span>
                 </div>
             </form>
         </div>

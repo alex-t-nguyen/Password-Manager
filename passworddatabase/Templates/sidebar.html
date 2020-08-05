@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block sidebar %}
+<div class="content-section">
+    <h3>Data</h3>
+    <p class='text-muted'>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-light">
+            {{ num_passwords }} Passwords
+        </li>
+        <li class="list-group-item list-group-item-light">
+            <a href="{{ url_for('read_me') }}" class="list-group-item-light">READ ME</a>
+        </li>
+        <li class="list-group-item list-group-item-light">Calendars</li>
+        <li class="list-group-item list-group-item-light">etc</li>
+      </ul>
+    </p>
+</div>
+{% endblock sidebar %}
